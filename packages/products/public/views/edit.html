@@ -1,0 +1,46 @@
+<h2 style="text-align: center">Edit Product</h2>
+<section data-ng-controller="ProductsController" data-ng-init="findOne()">
+  <div style="margin-left: 25%">
+      <form name="productForm" class="form-horizontal col-md-6" role="form" data-ng-submit="update(productForm.$valid)" novalidate>
+        <div class="form-group" ng-class="{ 'has-error' : submitted && productForm.title.$invalid }">
+          <label mean-token="'edit-title'" for="title" class="col-md-2 control-label">Title</label>
+          <div class="col-md-10">
+            <input name="title" type="text" class="form-control" data-ng-model="product.title" id="title" placeholder="Title" required>
+            <div ng-show="submitted && productForm.title.$invalid" class="help-block">
+              <p ng-show="productForm.title.$error.required">Title is required</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group" ng-class="{ 'has-error' : submitted && productForm.genre.$invalid }">
+          <label mean-token="'edit-genre'" for="genre" class="col-md-2 control-label">Genre</label>
+          <div class="col-md-10">
+              <input name="genre" type="text" class="form-control" data-ng-model="product.genre" id="genre" placeholder="Genre" required>
+              <div ng-show="submitted && productForm.genre.$invalid" class="help-block">
+                  <p ng-show="productForm.genre.$error.required">Genre is required</p>
+              </div>
+          </div>
+        </div>
+
+        <div class="form-group" ng-class="{ 'has-error' : submitted && productForm.price.$invalid }">
+          <label mean-token="'edit-price'" for="price" class="col-md-2 control-label">Price</label>
+          <div class="col-md-10">
+              <input name="price" type="number" class="form-control" data-ng-model="product.price" id="price" placeholder="Price" required>
+              <div ng-show="submitted && productForm.price.$invalid" class="help-block">
+                  <p ng-show="productForm.price.$error.required">Price is required and is must be a number.</p>
+              </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-md-offset-2 col-md-10">
+            <button mean-token="'edit-submit'" type="submit" class="btn btn-primary">Update Product</button>
+          </div>
+        </div>
+      </form>
+  </div>
+  <div style="clear: both"></div>
+  <div class="new-product">
+    <a ng-href="#!/products">Back</a>
+  </div>
+</section>

@@ -1,0 +1,13 @@
+
+<section data-ng-controller="ProductsController" data-ng-init="findOne()">
+    <div style="margin-left: 40%; background-color: #FFFFFF; border: 1px solid #e5e5e5; border-radius: 5px 5px 5px 5px; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);margin: 0 auto 20px;max-width: 300px; padding: 19px 29px 29px;">
+        <h2 style="font-size: 34.5px; line-height: 40px">Product Details</h2>
+        <b>Name: </b>{{product.title}}<br>
+        <b>Genre:</b> {{product.genre}}<br>
+        <b>Price:</b> {{product.price}}
+    </div>
+    <div class="back-btn" style="margin-top: 50px">
+        <a ng-href="#!/products">Back</a>
+    </div>
+
+</section>

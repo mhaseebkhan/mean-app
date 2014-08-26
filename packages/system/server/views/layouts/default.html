@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="https://www.facebook.com/2008/fbml" itemscope="itemscope" itemtype="http://schema.org/Product">
+{% include '../includes/head.html' %}
+
+<body>
+    <!--<div class="navbar navbar-inverse navbar-fixed-top" data-ng-include="'/system/views/header.html'" data-role="navigation"></div>-->
+    {% if adminEnabled %}
+    <section class="admin-menu">
+        <div data-ng-include="'/mean-admin/views/index.html'"></div>
+    </section>
+    {% endif %}
+    <section class="content">
+        <section class="container">
+            <div class="content-section" style="background-color: #eeeeee; padding: 20px; margin: 0 -20px; -webkit-border-radius: 0 0 6px 6px; -moz-border-radius: 0 0 6px 6px;border-radius: 0 0 6px 6px;-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);min-height: 335px;">
+                <div data-ng-include="'/system/views/header.html'"></div>
+                {% block content %}{% endblock %}
+            </div>
+        </section>
+    </section>
+    {% include '../includes/foot.html' %}
+</body>
+
+</html>
